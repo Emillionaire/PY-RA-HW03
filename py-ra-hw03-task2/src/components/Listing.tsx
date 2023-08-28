@@ -1,18 +1,17 @@
-import '../App.css';
-import { JSX } from "react";
 import Card from './Card';
+import data from '../data/etsy.json';
+
+type ListingProps = {
+    items: typeof data
+}
 
 
-
-
-const Listing = ({items}: any): JSX.Element => {
-    console.log(items)
-
+const Listing = ({items}: ListingProps): JSX.Element => {
     return (
         <div className='item-list'>
-            {items.map((item: any) => {
+            {items.map((item: any) => (
                 <Card item={item} />
-            })}
+            ))}
         </div>
     );
 };
